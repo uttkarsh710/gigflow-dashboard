@@ -14,7 +14,7 @@ function App() {
   const login = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://gigflow-backend-tdhw.onrender.com/api/auth/login",
         {
           email,
           password,
@@ -39,7 +39,7 @@ function App() {
       const token = localStorage.getItem("token");
 
       const response = await axios.get(
-        `http://localhost:5000/api/leads?search=${search}`,
+        `https://gigflow-backend-tdhw.onrender.com/api/leads?search=${search}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -224,7 +224,7 @@ function App() {
               ).value;
 
               await axios.post(
-                "http://localhost:5000/api/leads",
+                "https://gigflow-backend-tdhw.onrender.com/api/leads",
                 {
                   name,
                   email,
@@ -309,7 +309,7 @@ function App() {
                           );
 
                         await axios.delete(
-                          `http://localhost:5000/api/leads/${lead._id}`,
+                          `https://gigflow-backend-tdhw.onrender.com/api/leads/${lead._id}`,
                           {
                             headers: {
                               Authorization: `Bearer ${token}`,
